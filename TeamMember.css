@@ -1,0 +1,27 @@
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.team-member {
+    text-align: center;
+    margin: 20px;
+}
+
+.team-member img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+h2 {
+    margin-top: 10px;
+}
+
+p {
+    margin-top: 10px;
+}
+
+header{
+    color: aqua;
+}
