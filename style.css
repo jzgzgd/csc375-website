@@ -313,51 +313,55 @@ strong + ul li {
 }
 
 /*-----------------TeamMember--Start---------------------------------*/
-.team-member1 {
-  text-align:center;
-  margin:0px;
-  padding: 0%;
-  position: relative;
-  right:400px;
-  overflow: hidden;
-  display: inline-block;
-  top: 100px;
+/* 设置包裹所有成员的容器为 Flex 容器 */
+.tcontainer {
+  display: flex;
+  flex-wrap: wrap; /* 允许多行 */
+  justify-content: space-between; /* 使成员之间有等距的空间 */
+  gap: 20px; /* 设置成员之间的间距 */
 }
 
-.team-member2 {
-  text-align:center;
-  margin:0px;
-  position: relative;
-  bottom:663px;
-  left: 300px;
-  overflow: hidden;
-  display: inline-block;
-  top: -510px;
+/* 设置团队成员的样式 */
+.team-member {
+  flex-basis: calc(33.33% - 20px); /* 每行三个成员，并减去 gap 的大小 */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* 可选的阴影效果 */
+  padding: 20px;
+  border-radius: 8px; /* 添加圆角 */
+  background-color: #ffffff; /* 设置背景颜色 */
+  transition: transform 0.3s; /* 添加过渡效果 */
 }
 
-.team-member3 {
-  text-align:center;
-  margin:0px;
-  position: relative;
-  bottom: 1140px;
-  right:75px;
-  overflow: hidden;
-  display: inline-block;
-  top: -1130px;
+.team-member:hover {
+  transform: translateY(-10px); /* 鼠标悬停时上移动效果 */
 }
 
-.team-member-body
-
-
-
+/* 调整图片的大小 */
 .team-member img {
   width: 150px;
   height: 150px;
-  border-radius: 50%;
-  overflow: hidden;
-  display: inline-block;
-  border: 1px solid black;
+  border-radius: 50%; /* 使图片为圆形 */
+  object-fit: cover; /* 保持图片比例 */
+  display: block;
+  margin: 0 auto 20px; /* 水平居中并在下方添加间距 */
 }
+
+/* 为响应式设计添加媒体查询 */
+@media (max-width: 768px) {
+  .team-member {
+      flex-basis: calc(50% - 20px); /* 在较小的屏幕上每行两个成员 */
+  }
+}
+
+@media (max-width: 480px) {
+  .team-member {
+      flex-basis: 100%; /* 在最小的屏幕上每行一个成员 */
+  }
+}
+
+
+
+
+
 
 /*-------------------TeamMember--end----------------------------*/
 
